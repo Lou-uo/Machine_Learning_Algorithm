@@ -1,6 +1,6 @@
-Simple Linear Regression    简单线性回归
+## Simple Linear Regression    简单线性回归
 
-<img src="D:\Table\Big%20Files\Machine_Learning_Algorithm\Linear%20Regression\Simple%20Linear%20Regression\Day%202.jpg" alt="Day 2" style="zoom: 67%;" />
+<img src="Day 2.jpg" alt="Day 2" style="zoom: 67%;" />
 
 **Simple Linear Regression（简单线性回归）**，是机器学习里最基础的监督学习算法之一。
 
@@ -13,16 +13,17 @@ Simple Linear Regression    简单线性回归
 **Predicting a response using a single feature.**
 
 仅使用单个输入变量 (特征) 来预测结果
+
 $$
-y = b_0 + b_1x_1
+y = b_0 + b_1 x_1
 $$
 
 - $y$：预测值 (因变量 / 输出)
 - $x_1$：输入特征 (自变量)
 - $b_0$：截距 (intercept)
 - $b_1$：斜率 (slope)
-
-
+  
+  
 
 E.g. 
 
@@ -32,21 +33,21 @@ $Score = b_0 + b_1 \times hours$
 
 
 
-==关键问题：== **如何找到最佳的拟合线**
+<span style="color:purple">关键问题：</span> **如何找到最佳的拟合线**
 
 > 找到一条 “最佳拟合线”，使得预测误差最小
 
 - 预测误差：$y_i - y_p$ ，即 `真实值 - 预测值`
 
 - 目标函数：$\min \{\sum(y_i-y_p)^2\}$，使得 `让所有误差平方和最小`，即 **最小二乘法 (Least Squares)**
-
-
+  
+  
 
 ---
 
 
 
-==算法流程：==
+<span style="color:purple">算法流程：</span>
 
 
 
@@ -63,8 +64,8 @@ $Score = b_0 + b_1 \times hours$
 - 划分训练集和测试集（Split Dataset）
 
 - 特征缩放（Feature Scaling）
-
-
+  
+  
 
 #### STEP 2：Fitting Simple Linear Regression Model to the Training Set
 
@@ -80,10 +81,10 @@ regressor.fit(X_train, y_train)
 
 - 创建回归模型
 - 用训练数据训练
+  
+  
 
-
-
- #### STEP 3：Predicting the Result
+#### STEP 3：Predicting the Result
 
 使用训练好的模型预测测试集结果
 
@@ -105,8 +106,8 @@ plt.plot(X, y_pred)
 - 看预测效果好不好
 
 - 看数据是否接近直线
-
-
+  
+  
 
 ---
 
@@ -154,7 +155,7 @@ plt.show()
 
 #### Results
 
-![Figure_1](D:\Table\Big Files\Machine_Learning_Algorithm\Linear Regression\Simple Linear Regression\Figure_1.png)
+![Figure_1](Figure_1.png)
 
 **训练集可视化**
 
@@ -163,13 +164,16 @@ plt.show()
 - 横轴：学习时间
 - 纵轴：考试分数
 
-![Figure_2](D:\Table\Big Files\Machine_Learning_Algorithm\Linear Regression\Simple Linear Regression\Figure_2.png)
+![Figure_2](Figure_2.png)
 
 **测试集可视化**
 
 - <span style="color:red">红色散点</span>：测试数据（未参与模型训练，用于评估模型）
+
 - <span style="color:blue">蓝色直线</span>：同样的线性回归拟合线
 
 - 测试数据点较少（因为测试集只占25%）
+
 - 测试点分布在2小时到7.5小时之间
+
 - 所有测试点都比较接近回归线，说明模型泛化能力较好
