@@ -1,6 +1,6 @@
 ## Multiple Linear Regression（多元线性回归）
 
-<img src="Day 3.jpg" alt="Day 2" style="zoom: 67%;" />
+<img src="Day_3.jpg" alt="Day 2" style="zoom: 67%;" />
 
 **Multiple Linear Regression (多元线性回归)**，它是简单线性回归的升级版。
 

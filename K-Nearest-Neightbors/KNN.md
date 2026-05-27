@@ -1,6 +1,6 @@
 ## K Nearest Neighbours（K近邻算法）
 
-<img title="" src="Day 7.jpg" alt="Day 7" style="zoom: 67%;">
+<img title="" src="Day_7.jpg" alt="Day 7" style="zoom: 67%;">
 
 **K Nearest Neighbours（K近邻算法）**，最简单的多分类算法之一。
 

@@ -1,6 +1,6 @@
 ## Logistic Regression (逻辑回归)
 
-<img title="" src="Day 4.jpg" alt="Day 4" style="zoom: 67%;">
+<img title="" src="Day_4.jpg" alt="Day 4" style="zoom: 67%;">
 
 **Logisitc Regression (逻辑回归)**，用于解决**二分类问题**。
 

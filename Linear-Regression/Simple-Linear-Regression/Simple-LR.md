@@ -1,6 +1,6 @@
 ## Simple Linear Regression    简单线性回归
 
-<img src="Day 2.jpg" alt="Day 2" style="zoom: 67%;" />
+<img src="Day_2.jpg" alt="Day 2" style="zoom: 67%;" />
 
 **Simple Linear Regression（简单线性回归）**，是机器学习里最基础的监督学习算法之一。
 
