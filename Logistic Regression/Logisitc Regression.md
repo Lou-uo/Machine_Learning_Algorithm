@@ -78,32 +78,152 @@ Sigmoid函数
 输出类别(0/1)
 ```
 
-#### 
+#### Code
 
-#### Step 1 | Data Pre-Processing
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
+```
 
-- 导入库
+> 导入库
+> - `numpy` 数值计算库
+> - `matplotlib.pyplot` 数据可视化
+> - `pandas` 数据处理
+> - `train_test_split` 数据拆分
+> - `StandardScaler` 特征缩放
+> - `LogisticRegression` 逻辑回归模型
+> - `confusion_matrix` 混淆矩阵
+> - `accuracy_score` 准确率
+> - `classification_report` 分类报告
 
-- 导入数据集
+```python
+def load_dataset(file_path):
+    import os
+    
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    full_path = os.path.join(script_dir, file_path)
 
-- 将数据集拆分为训练集和测试集
+    dataset = pd.read_csv(full_path)
+    X = dataset.iloc[:, [2, 3]].values
+    y = dataset.iloc[:, 4].values
+    return X, y
+```
 
-- 特征缩放
+> 导入数据集
 
-#### Step 2 | Logistic Regression Model
+```python
+def preprocess_data(X, y, test_size=0.25, random_state=0):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
+    
+    sc = StandardScaler()
+    X_train = sc.fit_transform(X_train)
+    X_test = sc.transform(X_test)
+    
+    return X_train, X_test, y_train, y_test, sc
+```
 
-- 将逻辑回归拟合到训练集
+> 数据预处理
+> - 将数据集拆分为训练集和测试集
+> - 特征缩放
 
-#### Step 3 | Predection
+```python
+def train_model(X_train, y_train):
+    classifier = LogisticRegression(random_state=0)
+    classifier.fit(X_train, y_train)
+    return classifier
+```
 
-- 预测测试集结果
+> 训练逻辑回归模型
+> 为什么需要特征缩放？
+> - 年龄和收入数值范围差异很大
+> - 特征缩放让不同特征在相同尺度上比较
+> - 加快模型收敛速度，提高分类精度
 
-#### Step 4 | Evaluating The Predection
+```python
+def evaluate_model(y_test, y_pred):
+    cm = confusion_matrix(y_test, y_pred)
+    accuracy = accuracy_score(y_test, y_pred)
+    report = classification_report(y_test, y_pred)
+    
+    print("Confusion Matrix:")
+    print(cm)
+    print("\nAccuracy Score: {:.2f}%".format(accuracy * 100))
+    print("\nClassification Report:")
+    print(report)
+    
+    return cm, accuracy, report
+```
 
-- 制作混淆矩阵（包含模型对该数据集做出的正确预测以及错误预测）
+> 评估模型
+> `Precision` 精确率    $TP / (TP + FP)$
+> `Recall` 召回率    $TP / (TP + FN)$
+> `F1-score` 平衡值  $2 × (P × R) / (P + R)$
+> `Support` 样本数
 
-- 可视化
-  
+```python
+def plot_decision_boundary(X, y, classifier, title):
+    from matplotlib.colors import ListedColormap
+    
+    X_set, y_set = X, y
+    X1, X2 = np.meshgrid(np.arange(start=X_set[:, 0].min() - 1, stop=X_set[:, 0].max() + 1, step=0.01),
+                         np.arange(start=X_set[:, 1].min() - 1, stop=X_set[:, 1].max() + 1, step=0.01))
+    
+    plt.contourf(X1, X2, classifier.predict(np.array([X1.ravel(), X2.ravel()]).T).reshape(X1.shape),
+                 alpha=0.75, cmap=ListedColormap(('red', 'green')))
+    
+    plt.xlim(X1.min(), X1.max())
+    plt.ylim(X2.min(), X2.max())
+    
+    for i, j in enumerate(np.unique(y_set)):
+        plt.scatter(X_set[y_set == j, 0], X_set[y_set == j, 1],
+                    c=ListedColormap(('red', 'green'))(i), label=j)
+    
+    plt.title(title)
+    plt.xlabel('Age')
+    plt.ylabel('Estimated Salary')
+    plt.legend()
+    plt.show()
+```
+
+> 步骤：
+> 1. 创建网格：将年龄和收入范围划分为密密麻麻的网格点
+>    - X1: 年龄网格
+>    - X2: 收入网格
+> 2. 预测每个网格点：对每个网格点预测其类别（0或1）
+> 3. 填充颜色：
+>    - 红色区域：预测为"未购买"
+>    - 绿色区域：预测为"购买"
+> 4. 叠加散点：显示真实数据分布
+> 决策边界：红绿区域的交界线（逻辑回归是线性边界）
+
+```python
+if __name__ == "__main__":
+    # Load dataset
+    X, y = load_dataset('Social_Network_Ads.csv')
+    
+    # Preprocess data
+    X_train, X_test, y_train, y_test, sc = preprocess_data(X, y)
+    
+    # Train model
+    classifier = train_model(X_train, y_train)
+    
+    # Predict
+    y_pred = classifier.predict(X_test)
+    
+    # Evaluate
+    evaluate_model(y_test, y_pred)
+    
+    # Visualize results
+    plot_decision_boundary(X_train, y_train, classifier, 'Logistic Regression (Training Set)')
+    plot_decision_boundary(X_test, y_test, classifier, 'Logistic Regression (Test Set)')
+```
+
+#### Results
   
 
 ![Figure_1](Figure_1.png)
