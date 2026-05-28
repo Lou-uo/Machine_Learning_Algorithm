@@ -22,4 +22,8 @@ I can only record my learning path of machine learning in this way.😅**_
 
 - [SVM](Support-Vector-Machines/SVM.md)
 
+### Decision Trees
+
+- [Decision Trees](Decision-Trees/Decision_Trees.md)
+
 
