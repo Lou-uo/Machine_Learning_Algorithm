@@ -17,3 +17,9 @@ I can only record my learning path of machine learning in this way.😅**_
 ### K 近邻
 
 - [K 近邻](K-Nearest-Neightbors/KNN.md)
+
+### SVM
+
+- [SVM](Support-Vector-Machines/SVM.md)
+
+
