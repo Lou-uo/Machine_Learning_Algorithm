@@ -26,4 +26,6 @@ I can only record my learning path of machine learning in this way.😅**_
 
 - [Decision Trees](Decision-Trees/Decision_Trees.md)
 
+### Random Forest
 
+- [Random Forest](Random-Forests/Random-Forests.md)
