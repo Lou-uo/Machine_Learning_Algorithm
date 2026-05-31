@@ -1,9 +1,13 @@
 _**As an ordinary sophomore with no resources and no platform,      
 I can only record my learning path of machine learning in this way.😅**_
 
-本项目复现参考 [100-Days-of-ML-Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
+本项目复现参考并续写 [100-Days-of-ML-Code](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
 
 ## 学习笔记
+
+### Data PreProcessing
+
+<img title="" src="Day_1.jpg" alt="Day 1" style="zoom: 50%;">
 
 ### 线性回归
 
@@ -29,3 +33,9 @@ I can only record my learning path of machine learning in this way.😅**_
 ### Random Forest
 
 - [Random Forest](Random-Forests/Random-Forests.md)
+
+### K-Means-Clustering
+
+- [K-Means-Clustering](K-Means-Clustering/K-Means.md)
+
+
