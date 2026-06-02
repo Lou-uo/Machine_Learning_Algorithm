@@ -45,3 +45,7 @@ I can only record my learning path of machine learning in this way.😅**_
 ### Naive-Bayes
 
 - [Naive-Bayes](Naive-Bayes/Naive-Bayes.md)
+
+#### Gradient-Boosting
+
+- [Gradient-Boosting](Gradient-Boosting/Gradient-Boosting.md)
