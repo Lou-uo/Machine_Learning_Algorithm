@@ -46,6 +46,39 @@ I can only record my learning path of machine learning in this way.😅**_
 
 - [Naive-Bayes](Naive-Bayes/Naive-Bayes.md)
 
-#### Gradient-Boosting
+### Gradient-Boosting
 
 - [Gradient-Boosting](Gradient-Boosting/Gradient-Boosting.md)
+
+
+
+---
+
+
+
+### 关于如何选择机器学习算法？
+
+[我应该使用哪种机器学习算法？- SAS数据科学博客](https://blogs.sas.com/content/subconsciousmusings/2020/12/09/machine-learning-algorithm-use/)
+
+[AI技术原理|如何选择机器学习算法？ | Ribose Yim's Home](https://riboseyim.github.io/2018/04/02/Machine-Learning-Algorithms-Sheet/)
+
+这个具体情况具体分析，取决于许多因素：
+
+* 数据的大小，质量和性质
+* 可用的计算时间
+* 任务的紧迫性
+* 你想对数据做什么
+
+现在的建议是先做好架构，利用 vibe coding 实现多个算法再进行比对（效果、性能等）
+
+
+
+---
+
+
+
+完成时间：2026 / 06 / 02
+
+陆续更新完了，基础学到这里应该大差不差了。
+
+完结撒花 😇
