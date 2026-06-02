@@ -38,4 +38,10 @@ I can only record my learning path of machine learning in this way.😅**_
 
 - [K-Means-Clustering](K-Means-Clustering/K-Means.md)
 
+### Hierarchical-Clustering
 
+- [Hierarchical-Clustering](Hierarchical-Clustering/Hierarchical-Clustering.md)
+
+### Naive-Bayes
+
+- [Naive-Bayes](Naive-Bayes/Naive-Bayes.md)
